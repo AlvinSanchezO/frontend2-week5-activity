@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write 
+  contents: write
   issues: write
   pull-requests: write
 
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
@@ -60,7 +60,7 @@ jobs:
       - name: Construir y empujar imagen de Docker
         run: |
           VERSION=${{ needs.release.outputs.new_release_version }}
-      
+
           DOCKER_REPO="alvinsanchezo/frontend2-week5-activity"
 
           echo "Construyendo imagen $DOCKER_REPO:$VERSION..."
