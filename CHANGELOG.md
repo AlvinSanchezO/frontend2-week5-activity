@@ -1,3 +1,15 @@
+# 1.0.0 (2026-04-15)
+
+
+### Bug Fixes
+
+* ajuste de formato con prettier ([367b8cf](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/367b8cf6fc1318795b4392eaacbaf7367c2588ee))
+
+
+### Features
+
+* actualizacion de titulo para evidencia ([205a0a7](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/205a0a79e7512fc5bcfd24390da8f3a4df48c954))
+
 # 1.0.0 (2026-04-12)
 
 
