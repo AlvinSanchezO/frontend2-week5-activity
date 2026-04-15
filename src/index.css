@@ -1,0 +1,122 @@
+/* =========================================
+   ESTILOS GLOBALES - GAMEPEDIA
+   ========================================= */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* --- ESTILOS DEL NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1a1a1a;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #646cff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #646cff;
+}
+
+/* --- ESTILOS DE LA CUADRÍCULA (GRID) --- */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* --- ESTILOS DE LA TARJETA (GAME CARD) --- */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.game-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.game-title {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.game-rating {
+  margin-top: auto;
+  font-weight: 600;
+  color: #d97706; /* Color naranja para las estrellas */
+}
+
+/* --- ESTILOS DE ESTADO (LOADING / ERROR) --- */
+.state-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.error-text {
+  color: #dc2626;
+}
