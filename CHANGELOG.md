@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.2.0...v1.3.0) (2026-04-16)
+
+
+### Features
+
+* implementar seguridad de API Key y actualizar Docker a Node 22 ([e44c03c](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/e44c03c4757442130d5f88bbf5dc7c2297bc06fa))
+
 # [1.2.0](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.1.1...v1.2.0) (2026-04-16)
 
 
