@@ -2,54 +2,60 @@ import { useState, useEffect } from 'react';
 import GameCard from '../components/GameCard';
 
 const Home = () => {
-  // 1. Declaración de Estados en Inglés
   const [games, setGames] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // IMPORTANTE: Reemplazar con la llave real de RAWG en clase
-    const API_KEY = '2a3f6a90fc644427b42cddeff0bbe478';
+    // 1. Obtenemos la llave desde las variables de entorno de Vite
+    const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 
-    // 2. Función asíncrona nombrada convencionalmente
     const fetchGames = async () => {
+      // Validación de seguridad local
+      if (!API_KEY) {
+        setError('Falta la API Key en el archivo .env');
+        setIsLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch(
           `https://api.rawg.io/api/games?key=${API_KEY}`
         );
 
         if (!response.ok) {
-          throw new Error('No se pudieron cargar los juegos');
+          throw new Error('Error al conectar con la API de juegos');
         }
 
         const data = await response.json();
-        setGames(data.results); // Guardamos los resultados
+        setGames(data.results || []);
       } catch (err) {
         setError(err.message);
       } finally {
-        setIsLoading(false); // Apagamos el estado de carga
+        setIsLoading(false);
       }
     };
 
     fetchGames();
-  }, []); // El arreglo vacío asegura que solo se ejecute una vez al montar
+  }, []);
 
-  // 3. Renderizado condicional basado en los estados
   if (isLoading) {
-    return <h2 className="state-message">Cargando juegos... ⏳</h2>;
+    return <div className="state-message">Cargando juegos populares... ⏳</div>;
   }
 
   if (error) {
-    return <h2 className="state-message error-text">Error: {error} ❌</h2>;
+    return (
+      <div className="container">
+        <h2 className="state-message error-text">⚠️ {error}</h2>
+      </div>
+    );
   }
 
-  // 4. Renderizado principal
   return (
     <div className="container">
       <h2 className="title">Juegos Populares</h2>
 
       <div className="games-grid">
-        {/* Iteramos sobre el arreglo 'games' */}
         {games.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
