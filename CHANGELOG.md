@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.1.1...v1.2.0) (2026-04-16)
+
+
+### Features
+
+* implementar detalles dinámicos desde API ([59e43a5](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/59e43a589815c5d9334b31f53344a62037b018ee))
+
 ## [1.1.1](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.1.0...v1.1.1) (2026-04-16)
 
 
