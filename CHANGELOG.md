@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.1.0...v1.1.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* formatear archivos de favoritos para cumplir con prettier ([a52bab9](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/a52bab937d8f73315da416794429b47ce9b1091c))
+
 # [1.1.0](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.0.0...v1.1.0) (2026-04-16)
 
 
