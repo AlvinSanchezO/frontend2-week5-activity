@@ -181,3 +181,37 @@ body {
   color: #666;
   margin-top: 40px;
 }
+
+/* --- ESTILOS DE LA VISTA DE DETALLES --- */
+.details-banner {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+.game-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #eee;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.game-description {
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+}
+
+.game-description h3 {
+  color: #1a1a1a;
+  border-left: 4px solid #646cff;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
