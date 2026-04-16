@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/AlvinSanchezO/frontend2-week5-activity/compare/v1.0.0...v1.1.0) (2026-04-16)
+
+
+### Features
+
+* implementar logica de favoritos optimizada ([86a7c1c](https://github.com/AlvinSanchezO/frontend2-week5-activity/commit/86a7c1c0adce8ca86b3b397eb88ed60ac60fab34))
+
 # 1.0.0 (2026-04-15)
 
 
