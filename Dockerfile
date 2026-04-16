@@ -1,35 +1,40 @@
 # ==========================================
 # Etapa 1: Construcción (Node.js)
+# Usamos Node 22 para cumplir con los requisitos de Vite
 # ==========================================
-# Usamos una imagen de Node ligera
-FROM node:20-alpine AS builder
+FROM node:22-slim AS builder
 
-# Establecemos el directorio de trabajo dentro del contenedor
+# Instalamos actualizaciones de seguridad básicas
+RUN apt-get update && apt-get upgrade -y
+
 WORKDIR /app
 
-# Copiamos los archivos de dependencias primero (optimización de caché)
+# Copiamos archivos de dependencias
 COPY package*.json ./
 
-# Instalamos las dependencias de forma limpia
+# Instalamos dependencias (npm ci es más robusto para Docker)
 RUN npm ci
 
-# Copiamos el resto del código fuente del proyecto
+# Copiamos el resto del código
 COPY . .
 
-# Ejecutamos el comando de Vite para empaquetar la aplicación (genera la carpeta /dist)
+# Inyección de Secretos (Igual que antes)
+ARG VITE_RAWG_API_KEY
+ENV VITE_RAWG_API_KEY=$VITE_RAWG_API_KEY
+
+# Ahora el build debería pasar sin problemas de versión
 RUN npm run build
 
 # ==========================================
 # Etapa 2: Servidor de Producción (Nginx)
 # ==========================================
-# Usamos un servidor web ligero y de alto rendimiento
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
-# Copiamos los archivos estáticos compilados desde la Etapa 1 hacia la carpeta de Nginx
+# Actualizamos seguridad en el entorno final
+RUN apk update && apk upgrade
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Exponemos el puerto 80 (por donde Nginx sirve la app)
 EXPOSE 80
 
-# Arrancamos Nginx
 CMD ["nginx", "-g", "daemon off;"]
